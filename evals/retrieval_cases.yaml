@@ -1,0 +1,76 @@
+{
+  "cases": [
+    {
+      "id": "compute_unit_end_to_end",
+      "query": "AIV Cube 选择",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/evaluate_compute_unit_end_to_end"]
+    },
+    {
+      "id": "layout_and_gather",
+      "query": "布局 Gather 边界",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/layout_and_transform_placement"]
+    },
+    {
+      "id": "cross_core_workspace",
+      "query": "跨核 workspace 归约",
+      "filters": {"platform": "ascend910b"},
+      "expected": ["optimizations/cross_core_reduction_payload_and_sync"]
+    },
+    {
+      "id": "zero_weight_fast_path",
+      "query": "零权重 快路径",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/device_checked_fast_path"]
+    },
+    {
+      "id": "measurement_layers",
+      "query": "共享设备 计时 profile",
+      "filters": {"type": "runbooks", "platform": "ascend910b"},
+      "expected": ["runbooks/performance/separate_comparison_attribution_adoption"]
+    },
+    {
+      "id": "negative_result_scope",
+      "query": "负结果 变体 反例",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/negative_result_closes_variant_only"]
+    },
+    {
+      "id": "legacy_alias_lookup",
+      "query": "EXP-GOVERN-01",
+      "filters": {"type": "runbooks"},
+      "expected": ["runbooks/validations/experience_card_review"]
+    },
+    {
+      "id": "draft_precision_explicit",
+      "query": "FP16 输出 误差",
+      "filters": {"type": "optimizations", "status": "draft"},
+      "expected": ["optimizations/output_error_budget"]
+    },
+    {
+      "id": "draft_precision_hidden_by_default",
+      "query": "FP16 输出 误差",
+      "filters": {"type": "optimizations"},
+      "excluded": ["optimizations/output_error_budget"]
+    },
+    {
+      "id": "wrong_platform_excluded",
+      "query": "AIV Cube 选择",
+      "filters": {"type": "optimizations", "platform": "ascend950"},
+      "excluded": ["optimizations/evaluate_compute_unit_end_to_end"]
+    },
+    {
+      "id": "asymmetric_partition",
+      "query": "非对称 分带 尾块",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/cost_based_asymmetric_partition"]
+    },
+    {
+      "id": "specialization_maintenance",
+      "query": "魔术数 shape 特化",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/manageable_shape_specialization"]
+    }
+  ]
+}
