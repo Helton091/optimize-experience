@@ -101,6 +101,30 @@
       "query": "SplineConv 榜首 结构差距",
       "filters": {"type": "runbooks"},
       "expected": ["runbooks/performance/splineconv_leader_gap_review"]
+    },
+    {
+      "id": "selective_work_before_vectorization",
+      "query": "有效 工作量 向量化",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/selective_work_before_vectorization"]
+    },
+    {
+      "id": "numerical_fallback_ladder",
+      "query": "数值 分级 回退",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/numerical_fallback_ladder"]
+    },
+    {
+      "id": "cross_problem_expert_patterns",
+      "query": "跨题 高手 习惯",
+      "filters": {"type": "runbooks"},
+      "expected": ["runbooks/performance/cross_problem_expert_patterns"]
+    },
+    {
+      "id": "cross_problem_matrix",
+      "query": "30份 实现 证据 矩阵",
+      "filters": {"type": "runbooks"},
+      "expected": ["runbooks/performance/cross_problem_implementation_matrix"]
     }
   ]
 }

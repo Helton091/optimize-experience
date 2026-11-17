@@ -16,3 +16,5 @@
 - [稀疏图按命中边取局部核权](sparse_graph_local_weight_fetch.md)：比较 B×K 与 E×S 的搬运总账，避免被唯一槽位并集误导。
 - [热路径绕过整套通用脚手架](fast_path_bypass_generic_scaffolding.md)：从完整 tiling/meta/队列入口切换为最小专用入口，而非只少读字段。
 - [按目标节点重组 SplineConv 聚合](splineconv_group_by_destination.md)：先累计 basis×x 的槽位特征，再统一乘核权，并验证浮点重结合。
+- [先做有效工作量选择，再决定向量化方式](selective_work_before_vectorization.md)：先减少字段、边、候选和核权，再选择指令；含跨题代码证据与筛选成本预算。
+- [给快速数值路径设计分级回退](numerical_fallback_ladder.md)：用真实检查、局部修复和稳健完整算法组成降级阶梯，并为每级设置独立负对照。
