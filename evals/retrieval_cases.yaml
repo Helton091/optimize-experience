@@ -71,6 +71,36 @@
       "query": "魔术数 shape 特化",
       "filters": {"type": "optimizations"},
       "expected": ["optimizations/manageable_shape_specialization"]
+    },
+    {
+      "id": "splineconv_local_weights",
+      "query": "稀疏图 局部核权 搬运",
+      "filters": {"type": "optimizations", "platform": "ascend910b"},
+      "expected": ["optimizations/sparse_graph_local_weight_fetch"]
+    },
+    {
+      "id": "splineconv_regime",
+      "query": "SplineConv 图 regime 核数",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/sparse_graph_regime_dispatch"]
+    },
+    {
+      "id": "splineconv_entry",
+      "query": "热路径 通用脚手架 tiling",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/fast_path_bypass_generic_scaffolding"]
+    },
+    {
+      "id": "splineconv_group_destination",
+      "query": "目标节点 槽位 聚合",
+      "filters": {"type": "optimizations"},
+      "expected": ["optimizations/splineconv_group_by_destination"]
+    },
+    {
+      "id": "splineconv_leader_review",
+      "query": "SplineConv 榜首 结构差距",
+      "filters": {"type": "runbooks"},
+      "expected": ["runbooks/performance/splineconv_leader_gap_review"]
     }
   ]
 }

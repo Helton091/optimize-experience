@@ -12,3 +12,7 @@
 - [用最终输出误差预算决定数值路径](output_error_budget.md)：按输出误差传播评估 dtype；公开精度证据不足，当前为草稿。
 - [AIV、Cube 与 MIX 按端到端总账选择](evaluate_compute_unit_end_to_end.md)：包含布局、交接、同步、发射、切换和封装的完整比较。
 - [把 shape 特化维护成可审计配置](manageable_shape_specialization.md)：用声明式配置、模板和容量断言控制特化复杂度。
+- [按图 regime 选择执行骨架](sparse_graph_regime_dispatch.md)：按 E/N、K/S、入度和 UB 选择核数、所有权、核权策略和回退，含 SplineConv 实际分派对照。
+- [稀疏图按命中边取局部核权](sparse_graph_local_weight_fetch.md)：比较 B×K 与 E×S 的搬运总账，避免被唯一槽位并集误导。
+- [热路径绕过整套通用脚手架](fast_path_bypass_generic_scaffolding.md)：从完整 tiling/meta/队列入口切换为最小专用入口，而非只少读字段。
+- [按目标节点重组 SplineConv 聚合](splineconv_group_by_destination.md)：先累计 basis×x 的槽位特征，再统一乘核权，并验证浮点重结合。

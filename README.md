@@ -75,4 +75,4 @@ aliases: ["EXP-EXAMPLE-01"]
 
 ## 当前范围
 
-当前卡片主要来自一次 Ascend 910B3 / CANN 9.0.0 的 FP32 卷积与 Soft-Argmax 融合优化对照。它们提供方法和反例，不代表对其他芯片、CANN 版本、DSL 或算子已有覆盖。
+当前卡片来自 Ascend 910B / CANN 9.0.0 的 FP32 卷积与 Soft-Argmax 融合优化对照，以及一次 SplineConv 稀疏小图公开实现复盘。后者补充了图 regime 分派、局部核权、按目标节点聚合和最小入口等主题。它们提供方法、代码事实和反例，不代表对其他芯片、CANN 版本、DSL、算子或隐藏用例已有覆盖。
